@@ -131,7 +131,6 @@ describe('SignUp Controller', () => {
     jest.spyOn(emailValidatorStub, 'isValid')
       .mockReturnValueOnce(false)
     const httpResponse = await sut.handle(makeFakeRequest())
-    expect(httpResponse.statusCode).toBe(400)
     expect(httpResponse).toEqual(badRequest(new InvalidParamError('email')))
   })
 
