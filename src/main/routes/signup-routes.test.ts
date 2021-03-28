@@ -15,6 +15,7 @@ describe('SignUp Routes', () => {
     const accountCollection = await MongoHelper.getConllection('accounts')
     await accountCollection.deleteMany({})
   })
+
   test('Should return an account success', async () => {
     await request(app)
       .post('/api/signup')
