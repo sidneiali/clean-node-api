@@ -24,7 +24,7 @@
     "test:coveralls": "npm run test:ci && coveralls < coverage/lcov.info"
   },
   "devDependencies": {
-    "@shelf/jest-mongodb": "^1.2.3",
+    "@shelf/jest-mongodb": "^1.4.0",
     "@types/bcrypt": "^3.0.0",
     "@types/express": "^4.17.11",
     "@types/jest": "^26.0.22",
