@@ -1,5 +1,5 @@
 import { Controller, HttpRequest, HttpResponse, AddAccount, Validation } from './signup-controller-protocols'
-import { Authentication } from '@/domain/usecases/authentication'
+import { Authentication } from '@/domain/usecases/account/authentication'
 import { badRequest, forbidden, ok, serverError } from '@/presentation/helpers/http/http-helper'
 import { EmailInUseError } from '@/presentation/errors'
 
