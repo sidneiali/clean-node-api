@@ -1,8 +1,10 @@
-import SetupMiddlewares from './middlewares'
-import SetupRoutes from './routes'
+import setupMiddlewares from './middlewares'
+import setupRoutes from './routes'
+import setupSwagger from './config-swagger'
 import express from 'express'
 
 const app = express()
-SetupMiddlewares(app)
-SetupRoutes(app)
+setupSwagger(app)
+setupMiddlewares(app)
+setupRoutes(app)
 export default app
