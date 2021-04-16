@@ -1,7 +1,7 @@
 import { DbLoadSurveyResult } from './db-load-survey-result'
 import { LoadSurveyResultRepository, LoadSurveyByIdRepository } from './db-load-survey-result-protocols'
 import { mockLoadSurveyByIdRepository, mockLoadSurveyResultRepository } from '@/data/test'
-import { mockSurveyResultModel, throwError } from '@/domain/test'
+import { mockSurveyResultModel, mockSurveyResultModelEmpty, throwError } from '@/domain/test'
 import MockDate from 'mockdate'
 
 type SutTypes = {
@@ -50,6 +50,13 @@ describe('DbLoadSurveyResult UseCase', () => {
     const loadByIdSpy = jest.spyOn(loadSurveyByIdRepositoryStub, 'loadById')
     await sut.load('any_survey_id')
     expect(loadByIdSpy).toHaveBeenCalledWith('any_survey_id')
+  })
+
+  test('Should return surveyResultModel with all answers with count 0 if LoadSurveyResultRepository return null', async () => {
+    const { sut, loadSurveyResultRepositoryStub } = makeSut()
+    jest.spyOn(loadSurveyResultRepositoryStub, 'loadBySurveyId').mockReturnValueOnce(Promise.resolve(null))
+    const surveyResult = await sut.load('any_survey_id')
+    expect(surveyResult).toEqual(mockSurveyResultModelEmpty())
   })
 
   test('Should return surveyResultModel on success', async () => {
