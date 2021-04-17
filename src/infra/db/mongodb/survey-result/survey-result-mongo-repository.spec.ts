@@ -44,11 +44,11 @@ describe('Account Mongo Repository', () => {
   })
 
   beforeEach(async () => {
-    surveyCollection = await MongoHelper.getConllection('surveys')
+    surveyCollection = await MongoHelper.getCollection('surveys')
     await surveyCollection.deleteMany({})
-    surveyResultCollection = await MongoHelper.getConllection('surveyResults')
+    surveyResultCollection = await MongoHelper.getCollection('surveyResults')
     await surveyResultCollection.deleteMany({})
-    accountCollection = await MongoHelper.getConllection('accounts')
+    accountCollection = await MongoHelper.getCollection('accounts')
     await accountCollection.deleteMany({})
   })
   describe('save()', () => {
