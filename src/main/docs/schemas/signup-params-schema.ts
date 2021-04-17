@@ -14,5 +14,11 @@ export const signUpParamsSchema = {
       type: 'string'
     }
   },
+  example: {
+    name: 'sidnei',
+    email: 'sidnei@test.com',
+    password: 'test',
+    passwordConfirmation: 'test'
+  },
   required: ['name', 'email', 'password', 'passwordConfirmation']
 }
