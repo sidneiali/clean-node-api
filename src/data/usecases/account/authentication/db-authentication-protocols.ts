@@ -1,5 +1,6 @@
-export * from '@/data/usecases/account/add-account/db-add-account-protocols'
+export * from '@/domain/models/authentication'
 export * from '@/domain/usecases/account/authentication'
+export * from '@/data/usecases/account/add-account/db-add-account-protocols'
 export * from '@/data/protocols/criptography/hash-compare'
 export * from '@/data/protocols/criptography/encrypter'
 export * from '@/data/protocols/db/account/load-account-by-email-repository'
