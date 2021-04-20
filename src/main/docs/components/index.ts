@@ -1,9 +1,9 @@
-import { badRequest } from './bad-request'
-import { forbidden } from './forbidden'
-import { notFound } from './not-found'
-import { serverError } from './server-error'
-import { unauthorized } from './unauthorized'
-import apiKeyAuth from '../paths/api-key-auth'
+import { badRequest } from '@/main/docs/components/bad-request'
+import { forbidden } from '@/main/docs/components/forbidden'
+import { notFound } from '@/main/docs/components/not-found'
+import { serverError } from '@/main/docs/components/server-error'
+import { unauthorized } from '@/main/docs/components/unauthorized'
+import apiKeyAuth from '@/main/docs/paths/api-key-auth'
 
 export default {
   securitySchemes: {
