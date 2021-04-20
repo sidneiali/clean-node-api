@@ -1,5 +1,5 @@
 import { EmailValidation } from '@/validation/validators'
-import { EmailValidatorSpy } from '@/tests/validation/mock'
+import { EmailValidatorSpy } from '@/tests/validation/mocks'
 import { InvalidParamError } from '@/presentation/errors'
 import faker from 'faker'
 import { throwError } from '@/tests/domain/mocks'

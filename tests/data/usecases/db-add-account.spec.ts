@@ -1,5 +1,5 @@
 import { DbAddAccount } from '@/data/usecases'
-import { AddAccountRepositorySpy, HasherSpy, LoadAccountByEmailRepositorySpy } from '@/tests/data/mock'
+import { AddAccountRepositorySpy, HasherSpy, LoadAccountByEmailRepositorySpy } from '@/tests/data/mocks'
 import { mockAccountModel, mockAddAccountParams, throwError } from '@/tests/domain/mocks'
 
 type SutTypes = {
