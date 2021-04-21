@@ -8,7 +8,7 @@ export class AddAccountRepositorySpy implements AddAccountRepository {
 
   async add (data: AddAccountRepository.Params): Promise<AddAccountRepository.Result> {
     this.addAccountParams = data
-    return Promise.resolve(this.result)
+    return this.result
   }
 }
 
@@ -18,7 +18,7 @@ export class CheckAccountByEmailRepositorySpy implements CheckAccountByEmailRepo
 
   async checkByEmail (email: string): Promise<CheckAccountByEmailRepository.Result> {
     this.email = email
-    return Promise.resolve(this.result)
+    return this.result
   }
 }
 
@@ -32,7 +32,7 @@ export class LoadAccountByEmailRepositorySpy implements LoadAccountByEmailReposi
 
   async loadByEmail (email: string): Promise<LoadAccountByEmailRepository.Result> {
     this.email = email
-    return Promise.resolve(this.result)
+    return this.result
   }
 }
 
@@ -47,7 +47,7 @@ export class LoadAccountByTokenRepositorySpy implements LoadAccountByTokenReposi
     const { accessToken, role } = data
     this.accessToken = accessToken
     this.role = role
-    return Promise.resolve(this.result)
+    return this.result
   }
 }
 
@@ -58,6 +58,5 @@ export class UpdateAccessTokenRepositorySpy implements UpdateAccessTokenReposito
   async updateAccessToken (id: string, token: string): Promise<void> {
     this.id = id
     this.token = token
-    return Promise.resolve()
   }
 }
