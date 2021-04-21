@@ -8,8 +8,9 @@ export class DbLoadSurveyResult implements LoadSurveyResult {
     private readonly loadSurveyByIdRepository: LoadSurveyByIdRepository
   ) {}
 
-  async load (surveyId: string, accountId: string): Promise<SurveyResultModel> {
-    let surveyResult = await this.loadSurveyResultRepository.loadBySurveyId(surveyId, accountId)
+  async load (data: LoadSurveyResult.Params): Promise<LoadSurveyResult.Result> {
+    const { surveyId, accountId } = data
+    let surveyResult = await this.loadSurveyResultRepository.loadBySurveyId({ surveyId, accountId })
     if (!surveyResult) {
       const survey = await this.loadSurveyByIdRepository.loadById(surveyId)
       surveyResult = this.makeEmptyResult(survey)

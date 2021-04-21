@@ -1,25 +1,24 @@
-import { SurveyResultModel } from '@/domain/models'
 import { mockSurveyResultModel } from '@/tests/domain/mocks'
-import { LoadSurveyResult, SaveSurveyResult, SaveSurveyResultParams } from '@/domain/usecases'
+import { LoadSurveyResult, SaveSurveyResult } from '@/domain/usecases'
 
 export class SaveSurveyResultSpy implements SaveSurveyResult {
-  surveyResultModel = mockSurveyResultModel()
-  saveSurveyResultParams: SaveSurveyResultParams
+  result = mockSurveyResultModel()
+  saveSurveyResultParams: SaveSurveyResult.Params
 
-  async save (data: SaveSurveyResultParams): Promise<SurveyResultModel> {
+  async save (data: SaveSurveyResult.Params): Promise<SaveSurveyResult.Result> {
     this.saveSurveyResultParams = data
-    return Promise.resolve(this.surveyResultModel)
+    return this.result
   }
 }
 
 export class LoadSurveyResultSpy implements LoadSurveyResult {
-  surveyResultModel = mockSurveyResultModel()
+  result = mockSurveyResultModel()
   surveyId: string
   accountId: string
 
-  async load (surveyId: string, accountId: string): Promise<SurveyResultModel> {
-    this.surveyId = surveyId
-    this.accountId = accountId
-    return Promise.resolve(this.surveyResultModel)
+  async load (data: LoadSurveyResult.Params): Promise<LoadSurveyResult.Result> {
+    this.surveyId = data.surveyId
+    this.accountId = data.accountId
+    return this.result
   }
 }
